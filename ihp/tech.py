@@ -409,7 +409,7 @@ class TechIHP(BaseModel):
 
 TECH = TechIHP()
 LAYER_STACK = get_layer_stack()
-LAYER_VIEWS = gf.technology.LayerViews(PATH.lyp)
+LAYER_VIEWS = gf.technology.LayerViews(PATH.lyp_yaml)
 
 
 ############################
@@ -543,3 +543,6 @@ routing_strategies = dict(
     route_astar=route_astar,
     route_astar_metal=route_astar_metal,
 )
+
+if __name__ == "__main__":
+    LAYER_VIEWS.to_lyp(PATH.lyp)
